@@ -98,6 +98,10 @@
           // Make sure the search is re-done if the poly is changed.
           polygon.getPath().addListener('set_at', searchWithinPolygon);
           polygon.getPath().addListener('insert_at', searchWithinPolygon);
+
+          //Make sure the area is re-calculated if the polygon is changed
+          polygon.getPath().addListener('set_at', showArea);
+          polygon.getPath().addListener('insert_at', showArea);
         });
 
       }  //END: function initMap() {
